@@ -12,13 +12,39 @@
 7. http://choehuijin-egov.pass-ta.org 사이트에서 파스타 배포결과 확인.
 
 ***
+
+### 20200818(화) 작업
+- 2). 서버 프로그램 시험 준비 후 3교시 
+- 1). 관리자 등록 시 아이디 중복체크(RestAPI사용) 마무리.
+
+
+### 20200817(월) 작업
+- 3). 전자정부 프로젝트 *(관리자관리 기능 추가한 것) 파스타에 배포.
+- 2). 관리자 등록 시 아이디 중복체크(RestAPI사용) 기능추가.
+- 1). 관리자관리 기능 CRUD 마무리 OK.
+
 ### 20200814(금) 작업예정 (아래)
 - 3). 로컬pc에서 결과 확인 후 파스타에 배포예정.
 - 2). 멤버 뷰페이지, 업데이트 페이지, 인서트 페이지 작성.
+
+````
+우리가 기존에 작업한 스프링 프로젝트에서 
+<form id="폼이름" name="폼이름">
+
+</form>
+전자정부 프로젝트에서는 아래처럼
+<form:form commandName="폼이름" name="폼이름">
+</form:form>
+             
+```
+
 - 1). 컨트롤러에 경로추가(아래)
 - edu.human.com.member.web 패키지생성(컨트롤러용 패키지)
 - MemberController.java@Controller  클래스 생성.
 - com/member/selectMember.do
+- 0). 관리자관리 경로 com/member/selectMember.do 로그인 체크 추가
+ 로그인 체크 관련 파일: egov-com-servlet.xml(서블렛파일) 인터셉터 관리
+ 뷰리졸버(viewresolver):뷰단(jsp)단 해석기계.(웹 페이지루트, 확장자 지정)
 
 ```
  /**
