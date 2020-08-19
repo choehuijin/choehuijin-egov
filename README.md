@@ -13,10 +13,18 @@
 
 ***
 
+###20200819(수) 작업
+- 4). 클라우드 파스타 앱 제거 후, 이클립스 PUSH.(choehuijin-egovadmin관리용 php앱)
+- 3). 클라우드 파스타 mysql 서비스 제거 후, 다시 생성. (choehuijin-egov-db 서비스 이름)
+- 2). Tiles 탬플릿(UI쪽 레이아웃 정리) 라이브러리 사용, 전자정부 프로젝트에 적용 OK.
+- 1). DB인터페이스 확인 (아래)
+	     실행가능한 소스 https://github.com/miniplugin/Dbinterface_ora_ok
+	  (오라클 inset 후 커밋, System.out.print(vo.toString())
+
 ### 20200818(화) 작업
 - 2). 서버 프로그램 시험 준비 후 3교시 
 - 1). 관리자 등록 시 아이디 중복체크(RestAPI사용) 마무리.
-
+- 주). RestAPI 사용은 이클립스 내장 브라우저에서는 안되기 때문에 크롬 또는 IE사용
 
 ### 20200817(월) 작업
 - 3). 전자정부 프로젝트 *(관리자관리 기능 추가한 것) 파스타에 배포.

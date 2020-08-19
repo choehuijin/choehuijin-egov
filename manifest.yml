@@ -1,0 +1,10 @@
+---
+applications:
+- name: choehuijin-egov
+  memory: 1024M
+  disk_quota: 1024M
+  instances: 1
+  host: choehuijin-egov
+  domain: paas-ta.org
+  services:
+  - choehuijin-egov-db

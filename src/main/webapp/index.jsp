@@ -20,6 +20,7 @@
 <script type="text/javaScript">document.location.href="<c:url value='/cmm/main/mainPage.do'/>"</script>
   -->
   <!-- 타일즈 디자인 -->
-  <script type="text/javaScript">document.location.href="<c:url value='/cmm/main/mainPage.do'/>"</script><!-- 
+  <script type="text/javaScript">document.location.href="<c:url value='/tiles/main.do'/>"</script>
+  <!-- 
 <script type="text/javaScript">document.location.href="<c:url value='/cmm/main/mainPage.do'/>"</script> 
 -->
