@@ -20,7 +20,7 @@
       Anything you want
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2014-2019 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; 2014-2020 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
   </footer>
 </div>
 <!-- ./wrapper -->
@@ -33,21 +33,29 @@
 <script src="<c:url value='/'/>plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
 <script src="<c:url value='/'/>dist/js/adminlte.min.js"></script>
+
 <script>
-$(document).ready(function() {//location.pathname현재 페이지의 파일이름, 경로를 리턴해준다
-    var current = location.pathname;
-    //alert(current.split("/admin",3)[1]); //디버그 값
-    var current_split = current.split("/admin",3)[1]; // board 또는  member
-    $(".nav-treeview li a").each(function(){
-        var $this = $(this);//가독성을 위해서 
-        if(current=="/admin" || current=="/admin/") {
-           
-        }else//attr()을 통해서는  element가 가지는 속성값이나 정보를 조회(style,src)하거나세텅하는 형식의업무. prop()을통해서는 element가 가지는 실제적인 상태(활성화,체크,선택여부)를 제어하는 업무를하는것이좋다
-        //if($this.attr('href').includes(current) == true){
-        if($this.attr('href').indexOf(current_split) != -1){
-            $this.addClass('active');
+$(document).ready(function() {
+    //var current = location.search;
+    var current = '${bdMstr.bbsId}';
+    if(current==''){
+    	current = '${boardVO.bbsId}';
+    }
+    //alert(current);//디버그용
+    //alert(current.split("/admin",3)[1]);//디버그 값
+    //var current_split = current.split("/admin",3)[1];//board 또는 member
+    var current_split = current;
+    $('.nav-treeview li a').each(function(){
+        var $this = $(this);
+        if(current=="" || current=="/admin/") {
+        	
         }else{
-           $this.removeClass('active');
+	        //if($this.attr('href').includes(current) == true){
+	        if($this.attr('href').indexOf(current_split) != -1){
+	            $this.addClass('active');
+	        }else{
+	        	$this.removeClass('active');
+	        }
         }
     })
  });

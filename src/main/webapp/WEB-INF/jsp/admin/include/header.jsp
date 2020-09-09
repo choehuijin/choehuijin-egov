@@ -98,16 +98,31 @@
                   <p>관리자관리</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="<c:url value='/'/>admin/board/selectBoard.do" class="nav-link">
+              <li class="nav-item has-treeview">
+                <a href="#" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>게시물관리</p>
+                  <p>게시판관리
+                     <i class="right fas fa-angle-left"></i>
+                  </p>
                 </a>
+               <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                      <a href="<c:url value='/'/>admin/board/selectBoard.do?bbsId=BBSMSTR_AAAAAAAAAAAA"  class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>공지사항</p>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="<c:url value='/'/>admin/board/selectBoard.do?bbsId=BBSMSTR_BBBBBBBBBBBB" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>갤러리</p>
+                      </a>
+                    </li>
+               </ul>
               </li>
-            </ul>
+             </ul>
           </li>
-         
-        </ul>
+         </ul>
       </nav>
       <!-- /.sidebar-menu -->
     </div>
