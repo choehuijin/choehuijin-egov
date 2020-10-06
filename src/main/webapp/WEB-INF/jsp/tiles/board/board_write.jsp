@@ -23,8 +23,8 @@ function fn_egov_regist_notice(){
     if (!validateBoard(document.board)){
         return;
     }
-    if (confirm('<spring:message code="common.update.msg" />')) {
-        document.board.action = "<c:url value='/tiles/board/updateBoard.do'/>";
+    if (confirm('<spring:message code="common.regist.msg" />')) {
+        document.board.action = "<c:url value='/tiles/board/insertBoard.do'/>";
         document.board.submit();                    
     }
 }
@@ -65,8 +65,8 @@ function fn_egov_delete_notice() {
 			<form:form class="appForm" commandName="board" name="board" method="post" enctype="multipart/form-data" >
 				<input type="hidden" name="pageIndex" value="<c:out value='${searchVO.pageIndex}'/>"/>
 					<input type="hidden" name="returnUrl" value="<c:url value='/tiles/board/updateBoardForm.do'/>"/>
-					<input type="hidden" name="bbsId" value="<c:out value='${result.bbsId}'/>" />
-					<input type="hidden" name="nttId" value="<c:out value='${result.nttId}'/>" />
+					<input type="hidden" name="bbsId" value="<c:out value='${searchVO.bbsId}'/>" />
+					<input type="hidden" name="nttId" value="<c:out value='${searchVO.nttId}'/>" />
 					<input type="hidden" name="bbsAttrbCode" value="<c:out value='${bdMstr.bbsAttrbCode}'/>" />
 					<input type="hidden" name="bbsTyCode" value="<c:out value='${bdMstr.bbsTyCode}'/>" />
 					<input type="hidden" name="replyPosblAt" value="<c:out value='${bdMstr.replyPosblAt}'/>" />
@@ -93,13 +93,13 @@ function fn_egov_delete_notice() {
 							<input name="nttSj" value="${result.nttSj}" type="text" class="w100p" id="title_lbl" placeholder="제목을 입력해주세요"/></div>
 						</li>
 						<li class="clear">
-							<label for="content_lbl" class="tit_lbl">내용</label>
+							<label for="content_lbl" class="tit_lbl pilsoo_item">내용</label>
 							<div class="app_content">
 							<textarea name="nttCn" id="content_lbl" class="w100p" placeholder="간단한 상담 요청 사항을 남겨주시면 보다 상세한 상담이 가능합니다.
 전화 상담 희망시 기재 부탁드립니다.">${result.nttCn}</textarea></div>
 						</li>
 						<li class="clear">
-							<label for="name_lbl" class="tit_lbl pilsoo_item">작성자명</label>
+							<label for="name_lbl" class="tit_lbl">작성자명</label>
 							<div class="app_content">
 							<input name="frstRegisterNm" value="${result.frstRegisterNm}" type="text" class="w100p" id="name_lbl" placeholder="이름을 입력해주세요"/></div>
 						</li>
@@ -136,7 +136,6 @@ function fn_egov_delete_notice() {
 					<p class="btn_line">
 					<a href="javascript:fn_egov_regist_notice();void(0);" class="btn_baseColor">등록</a>
 					<a href="javascript:fn_egov_select_noticeList(1);void(0);" class="btn_baseColor">목록</a>
-					<a href="javascript:fn_egov_delete_notice();void(0);" class="btn_baseColor">삭제</a>
 					</p>	
 				</fieldset>
 			</form:form>

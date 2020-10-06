@@ -95,7 +95,23 @@ public class TilesController {
         return ret;
     }
 	
-	
+	/*
+	 * 타일즈를 이용한 게시판 등록 폼으로 이동
+	 */
+    @RequestMapping(value="/tiles/board/insertBoardForm.do")
+    public String insertBoardForm() throws Exception {
+    
+    	return "board/board_write.tiles";
+    }
+    
+    /*
+	 * 타일즈를 이용한 게시판 등록 구현
+	 */
+    @RequestMapping(value="tiles/board/insertBoard.do")
+    public String insertBoard() throws Exception {
+    	
+    	return "forward:/tiles/board/list.do";
+    }
 	/*
 	 * 타일즈를 이용한 게시판 삭제 구현
 	 */
